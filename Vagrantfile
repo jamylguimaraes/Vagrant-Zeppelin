@@ -7,10 +7,11 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.disksize.size = '50GB'
   config.vm.box = "centos/7" 
-  
+  config.vm.network "private_network", ip: "192.168.56.10"  
+
   config.vm.provider "virtualbox" do |v|
-    v.memory = 4096
-    v.cpus = 2
+    v.memory = 2048
+    v.cpus = 1
   end
 
   # SSH Config
@@ -18,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   # Network Config	
-  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  #config.vm.network "forwarded_port", guest: 8080, host: 9000, auto_correct: true
 
   # Upload user's ssh key into box
   ssh_key_path = "~/.ssh/"
