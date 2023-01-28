@@ -22,6 +22,10 @@ def zeppelin_install():
 		tar = tarfile.open('zeppelin-0.10.1-bin-all.tgz')
 		tar.extractall()
 		tar.close()
+		os.system('mv zeppelin-0.10.1-bin-all/ /opt/zeppelin')
+		os.system('adduser -d /opt/zeppelin -s /sbin/nologin zeppelin')
+		os.system('chown -R zeppelin:zeppelin /opt/zeppelin')
+		os.system('cp systemd/zeppelin.service /etc/systemd/system/')
 
 # Verifica se o wget existe na vm, se nao instala com yum
 # Realiza o download do java no site da oracle e prosegue com a instalacao 
