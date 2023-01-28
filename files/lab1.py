@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 import os
 
-ef java_install():
+def java_install():
 	os.system('wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm')
 	print("Download do Java Completo!")
 	os.system('yum -y localinstall jdk-17_linux-x64_bin.rpm')
