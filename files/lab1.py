@@ -1,6 +1,7 @@
 #!/usr/bin/env python2
 import os
 import tarfile
+import xml.etree.ElementTree as ET
 
 def java_install():
 	if os.path.exists('jdk-17_linux-x64_bin.rpm') :
@@ -12,6 +13,13 @@ def java_install():
 		print("Instalacao do Java Completa!")
 		os.system('cp java_home.sh /etc/profile.d/')
 		os.system('source ~/.bash_profile')	
+
+def zeppelin_xml_update():
+	tree = ET.parse('/opt/zeppelin/conf/zeppelin-site.xml.template')
+	root = tree.getroot()
+	ip = root[0][1]
+	ip.text = '192.168.56.10'
+	tree.write('/opt/zeppelin/conf/zeppelin-site.xml')
 
 def zeppelin_install():
 	if os.path.exists('zeppelin-0.10.1-bin-all.tgz') :
@@ -26,6 +34,7 @@ def zeppelin_install():
 		os.system('adduser -d /opt/zeppelin -s /sbin/nologin zeppelin')
 		os.system('chown -R zeppelin:zeppelin /opt/zeppelin')
 		os.system('cp systemd/zeppelin.service /etc/systemd/system/')
+		zeppelin_xml_update()
 
 # Verifica se o wget existe na vm, se nao instala com yum
 # Realiza o download do java no site da oracle e prosegue com a instalacao 
