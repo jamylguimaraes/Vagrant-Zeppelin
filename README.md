@@ -22,15 +22,17 @@ Se você já usou o Kibana para visualização de dados para o ElasticSearch ou 
 
 ## Lab 2
 
-Programa em python que realiza a instalação do Python 3.6, do Apache Superset e inializa o seu webserver na VM(Centos 7) criada no lab 1.
+Utilizando Python realizar a instalação do Python 3.6, do Apache Superset e inicializar o seu webserver na VM(Centos 7) criada no lab 1.
 
-Adicionar instalação do MySQL (ou banco de dados semelhante) e do Redis e integrar com o Superset.
+Integrar o MySQL (ou banco de dados semelhante) e o Redis ao Superset.
 
 ### Apache Superset
 
 ![Logo](https://upload.wikimedia.org/wikipedia/commons/0/0e/Superset_logo.svg)
 
-O Apache Superset é um aplicativo cloud-native software open source para exploração e visualização de dados capaz de lidar com dados em escala de petabyte. O aplicativo começou como um projeto hack-a-thon de Maxime Beauchemin enquanto trabalhava no Airbnb e entrou no programa Apache Incubator em 2017.
+O Apache Superset é um software cloud-native open source para exploração e visualização de dados capaz de lidar com dados em escala de petabyte. 
+
+O aplicativo começou como um projeto hack-a-thon de Maxime Beauchemin enquanto trabalhava no Airbnb e entrou no programa Apache Incubator em 2017.
 
 ## Lab3
 
@@ -51,4 +53,8 @@ Bônus (opcional): Fazer um script bash que percorre os namespaces e coleta a se
  - [Vagrant by HashiCorp](https://www.vagrantup.com/)
  - [Oracle JDK](https://www.oracle.com/in/java/technologies/downloads/)
  - [Apache Zeppelin](https://zeppelin.apache.org/)
+ - [Apache Superset](https://superset.apache.org/)
+ - [Docker](https://www.docker.com/)
+ - [K3D](https://k3d.io/)
+
 
